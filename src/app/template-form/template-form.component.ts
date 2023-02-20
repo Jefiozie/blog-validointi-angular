@@ -6,7 +6,7 @@ import {
   ValidatorRegistryService,
   ValidatorDirective,
 } from '@validointi/core';
-import { create, enforce, test, warn } from 'vest';
+import { create, enforce, test } from 'vest';
 interface Model {
   name: string;
   email: string;
@@ -38,7 +38,6 @@ const suite = create((data: Model = {} as Model, field?: string) => {
     enforce(data.password).longerThan(2);
   });
   test('password', 'Password is weak. maybe add a number', () => {
-    warn();
     enforce(data.password).matches(/[0-9]/);
     enforce(data.password).longerThanOrEquals(6);
   });
