@@ -1,8 +1,4 @@
-<form
-  validationId="sample-data"
-  (ngSubmit)="onSubmit($any(form))"
-  #form="ngForm"
->
+<form validationId="form1" (ngSubmit)="onSubmit($any(form))" #form="ngForm">
   <label for="name">
     <span>Your name</span>
   </label>
@@ -47,6 +43,7 @@
 
   <input type="submit" value="Submit" [disabled]="form.invalid" />
 </form>
+<!-- BELOW THIS IS JUST FOR DEMO -->
 <div *ngIf="form.dirty">
   <label> Name errors:</label>
   <pre>

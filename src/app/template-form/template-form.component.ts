@@ -59,10 +59,7 @@ export class TemplateFormComponent {
   model: Model = { name: '', email: '', confirmPassword: '', password: '' };
 
   #vr = inject(ValidatorRegistryService);
-  validate = this.#vr.registerValidator(
-    'sample-data',
-    createVestAdapter(suite)
-  );
+  validate = this.#vr.registerValidator('form1', createVestAdapter(suite));
 
   async onSubmit(data: any) {
     const validationResult = await this.validate(data);
