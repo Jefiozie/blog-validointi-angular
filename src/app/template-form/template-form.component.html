@@ -7,7 +7,6 @@
     name="name"
     placeholder="Fill in your name"
     [(ngModel)]="model.name"
-    #name="ngModel"
   />
 
   <label for="email">
@@ -18,7 +17,6 @@
     name="email"
     placeholder="Fill in your email"
     [(ngModel)]="model.email"
-    #email="ngModel"
   />
   <label for="password">
     <span>Your password</span>
@@ -28,7 +26,6 @@
     name="password"
     placeholder="Fill in your password"
     [(ngModel)]="model.password"
-    #password="ngModel"
   />
   <label for="confirmPassword">
     <span>Your confirm password</span>
@@ -38,31 +35,7 @@
     name="confirmPassword"
     placeholder="Fill in your confirm password"
     [(ngModel)]="model.confirmPassword"
-    #confirmPassword="ngModel"
   />
 
   <input type="submit" value="Submit" [disabled]="form.invalid" />
 </form>
-<!-- BELOW THIS IS JUST FOR DEMO -->
-<div *ngIf="form.dirty">
-  <label> Name errors:</label>
-  <pre>
-  {{ name.errors | json }}
-</pre
-  >
-  <label> Email errors:</label>
-  <pre>
-  {{ email.errors | json }}
-</pre
-  >
-  <label> Password errors:</label>
-  <pre>
-  {{ password.errors | json }}
-</pre
-  >
-  <label> Confirm Password errors:</label>
-  <pre>
-  {{ confirmPassword.errors | json }}
-</pre
-  >
-</div>
